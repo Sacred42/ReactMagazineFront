@@ -1,4 +1,7 @@
-const ProductsDetailsReducer =(state = {products : {}}, action) =>{
+function ProductsDetailsReducer (state = {product : {}}, action) {
+    console.log(state);
+    console.log(action)
+   
     switch(action.type){
         case 'REQUEST_DETAILS':
             return{
@@ -21,6 +24,6 @@ const ProductsDetailsReducer =(state = {products : {}}, action) =>{
         default :
           return state;    
     }
-}
+ }
 
-export default ProductsDetailsReducer;
+ export {ProductsDetailsReducer};

@@ -45,8 +45,10 @@ const mapDispatchToProps = (dispatch) =>{
   }
 }
 
-const mapStateToProps = (state) =>{
-    return state
+const mapStateToProps = ({ProductsReducer : {products}}) =>{
+    console.log(products);
+    return {products};
+    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

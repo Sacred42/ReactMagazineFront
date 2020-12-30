@@ -1,4 +1,6 @@
+
 function ProductsReducer (state = {products : []} , action) {
+  
  switch (action.type){
      case 'REQUEST_BOOKS' :
      return{
@@ -21,6 +23,8 @@ function ProductsReducer (state = {products : []} , action) {
      default :
      return state;
   }
-}
+};
 
-export default ProductsReducer;
+
+
+export { ProductsReducer};
