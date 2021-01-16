@@ -46,7 +46,6 @@ const mapDispatchToProps = (dispatch) =>{
 }
 
 const mapStateToProps = ({ProductsReducer : {products}}) =>{
-    console.log(products);
     return {products};
     
 }

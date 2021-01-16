@@ -55,6 +55,14 @@ justify-content: space-around;
 
 }
 
+.cart_items{
+  display: flex;
+}
+
+.cart_item{
+  padding: 30px;
+}
+
 .products li {
   font-size: 0.5rem;
   padding-left: 0rem 0rem 2rem 1.3rem;

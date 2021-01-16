@@ -1,7 +1,5 @@
 function ProductsDetailsReducer (state = {product : {}}, action) {
-    console.log(state);
-    console.log(action)
-   
+
     switch(action.type){
         case 'REQUEST_DETAILS':
             return{
