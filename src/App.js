@@ -7,6 +7,8 @@ import Advertising from './components/advertising/advertising';
 import ProductList from './components/products-list/products-list';
 import ProductDetail from './components/product-details/product-details';
 import ProductCart from './components/cart/cart';
+import SignIn from './components/signIn/SignIn';
+import SignUp from './components/signUp/SignUp';
 import Cart from './components/cart/cart';
 import {ProviderToCart} from './components/context/context';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
@@ -25,6 +27,8 @@ function App() {
         <Route exact path= "/" component={ProductList}/>
         <Route path="/products/:id" component={ProductDetail}/>
         <Route path="/productcart" component={ProductCart}/>
+        <Route path="/signin" component={SignIn}/>
+        <Route path="/signup" component={SignUp}/>
       </div>
     </div>
     </BrowserRouter>
