@@ -1,4 +1,5 @@
 import {defineResponse} from './defineRespone';
+
 const Requst = async(path) =>{
     console.log(path)
     const email =  document.getElementById('email').value;
@@ -12,7 +13,8 @@ const Requst = async(path) =>{
         headers : {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     }).then(res=> res.json())
-      .then((data)=> defineResponse(data))
+      .then((data)=>{localStorage.setItem('id_token' , data._id)
+        localStorage.setItem('acces_token', data.token)})
       .catch((err)=>{
           console.log('this err' , err);
       })
