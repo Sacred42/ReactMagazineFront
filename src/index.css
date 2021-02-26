@@ -1,5 +1,6 @@
 html {
   font-size: 30px;
+  min-height: 100%;
 }
 ul {
   margin: 0;
@@ -8,13 +9,30 @@ ul {
 
 header {
   font-size: 0.8rem;
+  font-style: italic;
+  background: linear-gradient(to top left, rgb(89, 142, 221) , rgb(235, 17, 17)) ;
   display: flex; 
   justify-content: space-between;
   padding: 1rem;
 }
 
-.links-header * {
-padding-right: 0.8rem;
+.logo > :only-child{
+  
+  text-decoration: none;
+}
+
+.links-header {
+display: flex;
+flex-direction: row;
+}
+
+.links-header > li {
+  list-style: none;
+  padding-right: 1rem ;
+}
+
+.links-header > li > :only-child{
+  text-decoration: none;
 }
 
 .drop-down-menu ul {
@@ -26,15 +44,16 @@ justify-content: space-around;
 
 .drop-down-menu ul > li {
   list-style-type: none;
-  padding: 0.55rem;
-  border: 0.07rem #000000 solid;
+  background-color: blue;
+  padding: 0.2rem 0.6rem;
+  border: 1px #000000 solid;
 }
 
 .drop-down-menu ul > li:first-child {
-  border-left: 0.1rem  #000000 solid;
+  border-left: 2px  #000000 solid;
 }
 .drop-down-menu ul > li:last-child {
-  border-right: 0.1rem  #000000 solid;
+  border-right: 2px  #000000 solid;
 }
 
 .advertising{
@@ -52,6 +71,7 @@ justify-content: space-around;
   display: flex;
   flex-flow: wrap;
   margin-top: 2rem;
+  max-height: 100%;
 
 }
 
@@ -85,3 +105,8 @@ justify-content: space-around;
   color: red;
 }
 
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(100, 168, 100);
+}

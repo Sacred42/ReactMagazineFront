@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {Requst} from '../../ReqResFunction/request';
 import {register, checkToken} from '../../actions/actionUser';
+import './signIn.css';
 
 const SignIn = (props) => {
     const [email , setEmail] = useState('');
@@ -9,13 +10,14 @@ const SignIn = (props) => {
     const useRegister = useSelector(state => state.UserRegisterReducer);
     const {loading, error, userInfo} = useRegister;
     const dispatch = useDispatch();
-
-    console.log(userInfo);
+    
     useEffect(()=>{
         if(userInfo){
-        dispatch(checkToken());
+        dispatch(checkToken(props.match.path));
+        props.history.push("/profile");
         }
         return ()=>{
+
         }
      }, [])
     
@@ -26,19 +28,26 @@ const SignIn = (props) => {
       }
 
     return (
-        <div>
-            
-             <div>{loading && <div>Loading...</div>}
-             {error && <div>{error}</div>}
-             {userInfo && <div>{userInfo}</div>}
-             </div> 
+        <ul className="content">
+          
+            <li> 
+            <div>Email</div>
             <input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)}></input>
+            </li>
+            <li>
+            <div>Password</div>
             <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)}></input>
-            <button type="submit" id="pas" onClick={submitHandler}>SignIn</button>
-            <input id="alert"></input>
-            {/* <Alert/> */}
+            </li>
+            <li>
+            <button type="submit" id="pas" onClick={submitHandler}>SignUp</button>
+            </li>
+            <li>
+             {loading && <div>Loading...</div>}
+             {error && <div>{error}</div>}
+             </li>
             
-        </div>
+            
+        </ul>
         
     )
 }

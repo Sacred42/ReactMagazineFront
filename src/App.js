@@ -9,7 +9,10 @@ import ProductDetail from './components/product-details/product-details';
 import ProductCart from './components/cart/cart';
 import SignIn from './components/signIn/SignIn';
 import SignUp from './components/signUp/SignUp';
+import HomePage from './components/homePage/homePage';
 import Cart from './components/cart/cart';
+import Profile from './components/profile/profile';
+import Footer from './components/footer/footer';
 import {ProviderToCart} from './components/context/context';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
@@ -22,14 +25,14 @@ function App() {
       <Header/>
       <div className="container">
         <DropMenu/>
-        <Advertising/>
-        <Slider/>
-        <Route exact path= "/" component={ProductList}/>
+        <Route exact path= "/" component={HomePage}/>
         <Route path="/products/:id" component={ProductDetail}/>
         <Route path="/productcart" component={ProductCart}/>
         <Route path="/signin" component={SignIn}/>
         <Route path="/signup" component={SignUp}/>
+        <Route path="/profile" component={Profile}/>
       </div>
+      <Footer/>
     </div>
     </BrowserRouter>
   );
